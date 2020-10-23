@@ -1,7 +1,7 @@
 # FileSystems
 Manipulate files and directories with javascript.
 
-1. Step#1: Download Repo /n
+1. Step#1: Download Repo
 2. Step#2: Download Nodejs
 3. Step#3: Download Postman and Visual Studio Code
 4. Step#4: Open repo in terminal and type "npm run start"
