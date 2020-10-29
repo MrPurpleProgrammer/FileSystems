@@ -3,7 +3,6 @@ const path = require('path');
 
 //moves the file to dir
 let moveFile = (req, res, next) => {
-    console.log(req.body);
     //gets file name and adds it to dir2
     let f = path.basename(req.body.file);
     let dest = path.resolve(req.body.dir, f);
