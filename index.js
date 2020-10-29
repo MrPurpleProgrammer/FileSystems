@@ -1,6 +1,6 @@
 
 const { moveFile } = require('./utils/move');
-const { copyFile, copyFile_ChangeNameToParentDir } = require('./utils/copy');
+const { copyFile, copyFile_ChangeNameToParentDir, copyFolder, copyFolder_ChangeNameToParentDir } = require('./utils/copy');
 const { renameFile } = require('./utils/rename')
 const express = require('express');
 const bodyParser = require('body-parser')
@@ -16,6 +16,8 @@ server.use(bodyParser.json({ limit: '10000kb' }));
 server.listen(5001, () => console.log(`Server started on port ${5001}`));
 
 server.use('/move', (req, res, next) => { moveFile(req, res, next) });
-server.use('/copy', (req, res, next) => { copyFile(req, res, next) });
-server.use('/copy/change_to_parent_dir', (req, res, next) => { copyFile_ChangeNameToParentDir(req, res, next) });
+server.use('/copy/file', (req, res, next) => { copyFile(req, res, next) });
+server.use('/copy/file_change_to_parent_dir', (req, res, next) => { copyFile_ChangeNameToParentDir(req, res, next) });
+server.use('/copy/folder', (req, res, next) => { copyFolder(req, res, next) });
+server.use('/copy/folder_change_to_parent_dir', (req, res, next) => { copyFolder_ChangeNameToParentDir(req, res, next) });
 server.use('/rename', (req, res, next) => { renameFile(req, res, next) });
